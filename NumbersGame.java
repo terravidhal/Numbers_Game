@@ -7,7 +7,7 @@ public class NumbersGame {
         System.out.println("Can you guess the number?");
         System.out.println("If you are not up to the task, you can always type 'q' to quit.");
         int answer = new Random().nextInt(10) + 1; // MODIF 3
-                                                  // MODIF 2 
+                                    
         int trygame = 0;
 
         while (true) {
@@ -19,7 +19,10 @@ public class NumbersGame {
             }
             try { // MODIF 1
 
-                if (Integer.parseInt(guess) == answer) {
+                if(Integer.parseInt(guess)<0 || Integer.parseInt(guess)>10){ // MODIF 2
+                    System.out.println("Your number is not between 0 and 10...");
+
+                }else if (Integer.parseInt(guess) == answer) {
                     System.out.println("Lucky guess! But can you do it again?");
                     break;
                 } else {
